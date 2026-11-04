@@ -1,9 +1,0 @@
--- FARM R&A database (applied as migration farm_ra_setup).
--- accounts(email pk, name, role admin|helper|viewer, added_at, added_by)
--- records(col, id, data jsonb, updated_at, updated_by) primary key (col, id)
--- Functions: fj_me(), fj_role(), fj_can_read(), fj_can_write(), fj_is_admin()
--- RLS: records readable by any account; writable by admin and helper. accounts: own row, admins manage all.
---      A trigger keeps at least one admin; emails are stored lowercase.
--- Storage: private bucket 'receipts' (5 MB, jpeg/png/webp); read for accounts, write for admin and helper.
--- Realtime: public.records is in the supabase_realtime publication.
--- Starting accounts: contact@ramediapro.co (Rian) and anna.pongratz55@gmail.com (Anna), both admin.
