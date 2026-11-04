@@ -1,41 +1,21 @@
 {
-  "name": "Farm Journal",
-  "short_name": "Farm Journal",
-  "description": "Humboldt Farms daily journal with the FSA Groundwork Plan",
-  "start_url": "./journal.html",
+  "name": "Farm R&A",
+  "short_name": "Farm R&A",
+  "description": "Humboldt Farms: the farm journal and FSA Groundwork Plan in one app.",
+  "id": "./",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#E9EEEA",
   "theme_color": "#1F4D38",
   "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "shortcuts": [
-    {
-      "name": "Today",
-      "url": "./journal.html#today"
-    },
-    {
-      "name": "Progress",
-      "url": "./journal.html#progress"
-    }
+    { "name": "Today", "url": "./#today", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Plan", "url": "./#progress", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
   ]
 }
