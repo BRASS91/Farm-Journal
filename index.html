@@ -620,7 +620,7 @@ body.ro .rohide{display:none!important}
   <!-- PROGRESS -->
   <section class="view" id="v-progress" aria-label="Plan and progress" hidden>
     <div class="card planhead" id="planHead"></div>
-    <div class="sect"><h3>The carton</h3><span class="small">One cup per day. Fill it by Feb 28.</span></div>
+    <div class="sect"><h3>The carton</h3><span class="small">One cup per day. Fill it by Feb 21.</span></div>
     <div class="card">
       <div class="carton" id="carton"></div>
       <div class="legend">
@@ -770,130 +770,136 @@ body.ro .rohide{display:none!important}
 <script>
 // ---------- Plan tasks from the FSA Groundwork Plan: [date, tag, title, detail, key] ----------
 const PLAN = [
-["2026-11-16", "School", "Check your CRC status and enrollment appointment", "Log in to eServices. No student ID yet? Submit the CCCApply application for Spring 2027 (Agriculture Business) today. If you have one, find your enrollment appointment and put it on your calendar with an alarm. Spring registration may already be open.", 1],
-["2026-11-17", "Build", "Restart check: coop and garden", "Walk the yard. Write down what's done on the coop and beds and what's left, and take photos for the log.", 0],
-["2026-11-18", "Records", "Back-fill the log", "Your log started Oct 7. Add an entry for each day you did farm work since then (research, building, calls) with dates and hours, so that experience counts. From today, log every day.", 1],
-["2026-11-19", "Legal", "Call Sacramento Animal Care Services about quail", "Call 311 and ask whether Coturnix quail count as poultry under City Code 9.44.340. Ask for the answer by email. Also ask how the 3-hen chicken permit works. Their answer decides which birds you buy. Already have it? File the email.", 1],
-["2026-11-20", "School", "File the FAFSA", "Use your 2024 return from TurboTax or an IRS transcript. Skip if done.", 1],
-["2026-11-21", "Network", "Walk a farmers market and meet 3 growers", "Introduce yourself to small egg and produce growers. Get names and contact info, and ask how they got started selling. Log it.", 0],
+["2026-11-04", "Setup", "Set up Farm R&A on your phone", "Sign in, set your password, and add the app to your home screen. In Settings → Data & backup, check that it says All saved.", 0],
+["2026-11-05", "Records", "Gather your paperwork", "One folder (paper or phone) with your layoff notice, unemployment statements, 2024 tax return and any CRC login details. The school and money tasks in the next two weeks pull from it.", 0],
+["2026-11-06", "Money", "Round up receipts", "Snap a photo of every farm receipt since Oct 7 into the Receipts card on the day you bought it, and log the amounts under Money.", 0],
+["2026-11-07", "Build", "Take \"before\" photos", "Photograph the coop site and garden beds as they are today. They anchor the build story in your FSA file.", 0],
+["2026-11-08", "Review", "Preview week 1, 20 minutes", "Read next week in the Plan tab and block time on your calendar for Monday's school check and Thursday's call to Animal Care Services.", 0],
+["2026-11-09", "School", "Check your CRC status and enrollment appointment", "Log in to eServices. No student ID yet? Submit the CCCApply application for Spring 2027 (Agriculture Business) today. If you have one, find your enrollment appointment and put it on your calendar with an alarm. Spring registration may already be open.", 1],
+["2026-11-10", "Build", "Restart check: coop and garden", "Walk the yard. Write down what's done on the coop and beds and what's left, and take photos for the log.", 0],
+["2026-11-11", "Records", "Back-fill the log", "Your log started Oct 7. Add an entry for each day you did farm work since then (research, building, calls) with dates and hours, so that experience counts. From today, log every day.", 1],
+["2026-11-12", "Legal", "Call Sacramento Animal Care Services about quail", "Call 311 and ask whether Coturnix quail count as poultry under City Code 9.44.340. Ask for the answer by email. Also ask how the 3-hen chicken permit works. Their answer decides which birds you buy. Already have it? File the email.", 1],
+["2026-11-13", "School", "File the FAFSA", "Use your 2024 return from TurboTax or an IRS transcript. Skip if done.", 1],
+["2026-11-14", "Network", "Walk a farmers market and meet 3 growers", "Introduce yourself to small egg and produce growers. Get names and contact info, and ask how they got started selling. Log it.", 0],
+["2026-11-15", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
+["2026-11-16", "School", "Pick spring courses and register", "Ag courses first, then any GE you still need. Check online and CVC Exchange options. Register on your enrollment appointment date, or the first day you're able to. If your appointment is later, pick now and register then.", 1],
+["2026-11-17", "Build", "Finalize the coop plan and materials list", "Based on the city's answer: quail house or 3-hen coop (15 to 42 sq ft, 20 ft from the neighbor's house). Price out lumber and hardware cloth.", 0],
+["2026-11-18", "Mentor", "Request both mentors: Expanding Our Roots and SCORE", "California Bountiful Foundation's free mentorship is built for growers with 1 to 10 years of experience; if you don't fit yet, email cabountifulfoundation@cfbf.com and ask whether a backyard operation plus CRC enrollment qualifies. Then request a SCORE Sacramento mentor with agriculture experience and say the goal is an FSA Farm Ownership loan.", 1],
+["2026-11-19", "School", "Finish CRC setup in eServices", "Complete any required forms, and order transcripts from your prior college sent to CRC.", 0],
+["2026-11-20", "Build", "Shopping run: coop materials", "Buy the lumber, hardware cloth (1/4 to 1/2 inch, not chicken wire) and hardware. Keep every receipt and snap a photo of each in the journal.", 0],
+["2026-11-21", "Build", "Build day: coop frame", "Photos before and after. Log hours and materials cost.", 0],
 ["2026-11-22", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2026-11-23", "School", "Pick spring courses and register", "Ag courses first, then any GE you still need. Check online and CVC Exchange options. Register on your enrollment appointment date, or the first day you're able to. If your appointment is later, pick now and register then.", 1],
-["2026-11-24", "Build", "Finalize the coop plan and materials list", "Based on the city's answer: quail house or 3-hen coop (15 to 42 sq ft, 20 ft from the neighbor's house). Price out lumber and hardware cloth.", 0],
-["2026-11-25", "Mentor", "Request both mentors: Expanding Our Roots and SCORE", "California Bountiful Foundation's free mentorship is built for growers with 1 to 10 years of experience; if you don't fit yet, email cabountifulfoundation@cfbf.com and ask whether a backyard operation plus CRC enrollment qualifies. Then request a SCORE Sacramento mentor with agriculture experience and say the goal is an FSA Farm Ownership loan.", 1],
+["2026-11-23", "Money", "Ask EDD and Sacramento Works about training funds", "If you're on unemployment, California Training Benefits may let you keep benefits while in the CRC program, but it has to be approved before classes start. Also ask Sacramento Works whether WIOA money can cover tuition, books or supplies for the ag program.", 1],
+["2026-11-24", "Garden", "Plant the cool-season trial beds", "It's late for seeding some crops, so use transplants for kale, chard and lettuce. Garlic, favas, radish and carrots can still be sown. Record variety, seed source, bed size and planting date for each.", 0],
+["2026-11-25", "FSA", "Call the Humboldt County FSA office", "Introduce yourself and ask which mix of coursework, mentorship and your backyard operation they'd count toward the 3-year requirement. Write down who you spoke to and what they said.", 1],
 ["2026-11-26", "Rest", "Thanksgiving: care and log only", "Habits count. That's still a day forward.", 0],
-["2026-11-27", "Build", "Shopping run: coop materials", "Buy the lumber, hardware cloth (1/4 to 1/2 inch, not chicken wire) and hardware. Keep every receipt and snap a photo of each in the journal.", 0],
-["2026-11-28", "Build", "Build day: coop frame", "Photos before and after. Log hours and materials cost.", 0],
+["2026-11-27", "Money", "Separate the farm money", "A separate account or at least a separate ledger tab. Enter every receipt so far.", 0],
+["2026-11-28", "Build", "Build day: roof, hardware cloth, nest boxes", "Use 1/4 to 1/2 inch hardware cloth, not chicken wire.", 0],
 ["2026-11-29", "Review", "Weekly review and November wrap-up", "Total November hours and costs, including the back-filled entries. Write one paragraph for your FSA file.", 1],
-["2026-11-30", "Money", "Ask EDD and Sacramento Works about training funds", "If you're on unemployment, California Training Benefits may let you keep benefits while in the CRC program, but it has to be approved before classes start. Also ask Sacramento Works whether WIOA money can cover tuition, books or supplies for the ag program.", 1],
-["2026-12-01", "Garden", "Plant the cool-season trial beds", "It's late for seeding some crops, so use transplants for kale, chard and lettuce. Garlic, favas, radish and carrots can still be sown. Record variety, seed source, bed size and planting date for each.", 0],
-["2026-12-02", "FSA", "Call the Humboldt County FSA office", "Introduce yourself and ask which mix of coursework, mentorship and your backyard operation they'd count toward the 3-year requirement. Write down who you spoke to and what they said.", 1],
-["2026-12-03", "School", "Finish CRC setup in eServices", "Complete any required forms, and order transcripts from your prior college sent to CRC.", 0],
-["2026-12-04", "Money", "Separate the farm money", "A separate account or at least a separate ledger tab. Enter every receipt so far.", 0],
-["2026-12-05", "Build", "Build day: roof, hardware cloth, nest boxes", "Use 1/4 to 1/2 inch hardware cloth, not chicken wire.", 0],
-["2026-12-06", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2026-12-07", "School", "Request a financial aid special circumstances review", "Tell CRC financial aid you were laid off. Bring your separation notice and unemployment statements.", 1],
-["2026-12-08", "Birds", "Line up a bird source", "Find a local breeder or hatchery (quail, or point-of-lay hens if quail are out). Compare price, age and pickup date. Aim for pickup on Dec 15.", 0],
-["2026-12-09", "Learn", "Write a biosecurity checklist", "Read UC small-flock health basics and turn them into a short checklist taped inside the coop.", 0],
-["2026-12-10", "School", "Check your spring plan with a counselor", "Book a CRC counselor or call the ag department: confirm your classes fit the A.S., which ag classes run online, and what GE you still need. Ag dept: (916) 691-7614.", 0],
-["2026-12-11", "Build", "Finish and predator-proof the coop", "Check every latch, gap and seam. Rats and raccoons are the main threats in town.", 1],
-["2026-12-12", "Network", "Hands-on day: Soil Born Farms or UCCE event", "Find a volunteer day or workshop this week and go. Log hours and what you learned.", 0],
-["2026-12-13", "Review", "Four-week check-in", "Weekly review, plus a look back at the first four weeks of the restart: hours, costs, what's working and what isn't. One paragraph for your FSA file.", 1],
-["2026-12-14", "Legal", "Apply for CDFA Egg Handler Registration", "Confirm it covers duck and quail eggs sold to food businesses, not only chicken eggs.", 1],
-["2026-12-15", "Birds", "Bring the birds home", "Record count, source, age, cost and date in the Flock card. This is a big log entry.", 1],
-["2026-12-16", "Learn", "Set the feed plan", "Protein level, daily amount, feeder and waterer routine. Write it in the log so you can show the management decision.", 0],
-["2026-12-17", "Network", "Follow up with the growers you met", "Ask about trading eggs for produce once your birds are laying.", 0],
-["2026-12-18", "Money", "Price cartons, labels and a cooler", "Labels need your name, address and quantity. Eggs stay at 45°F or below.", 0],
-["2026-12-19", "Network", "Market visit: scout food vendors", "List vendors who could use quail eggs: breakfast stands, ramen and rice bowls, bakers.", 0],
+["2026-11-30", "School", "Request a financial aid special circumstances review", "Tell CRC financial aid you were laid off. Bring your separation notice and unemployment statements.", 1],
+["2026-12-01", "Birds", "Line up a bird source", "Find a local breeder or hatchery (quail, or point-of-lay hens if quail are out). Compare price, age and pickup date. Aim for pickup on Tue, Dec 8.", 0],
+["2026-12-02", "Learn", "Write a biosecurity checklist", "Read UC small-flock health basics and turn them into a short checklist taped inside the coop.", 0],
+["2026-12-03", "School", "Check your spring plan with a counselor", "Book a CRC counselor or call the ag department: confirm your classes fit the A.S., which ag classes run online, and what GE you still need. Ag dept: (916) 691-7614.", 0],
+["2026-12-04", "Build", "Finish and predator-proof the coop", "Check every latch, gap and seam. Rats and raccoons are the main threats in town.", 1],
+["2026-12-05", "Network", "Hands-on day: Soil Born Farms or UCCE event", "Find a volunteer day or workshop this week and go. Log hours and what you learned.", 0],
+["2026-12-06", "Review", "Four-week check-in", "Weekly review, plus a look back at the first four weeks of the restart: hours, costs, what's working and what isn't. One paragraph for your FSA file.", 1],
+["2026-12-07", "Legal", "Apply for CDFA Egg Handler Registration", "Confirm it covers duck and quail eggs sold to food businesses, not only chicken eggs.", 1],
+["2026-12-08", "Birds", "Bring the birds home", "Record count, source, age, cost and date in the Flock card. This is a big log entry.", 1],
+["2026-12-09", "Learn", "Set the feed plan", "Protein level, daily amount, feeder and waterer routine. Write it in the log so you can show the management decision.", 0],
+["2026-12-10", "Network", "Follow up with the growers you met", "Ask about trading eggs for produce once your birds are laying.", 0],
+["2026-12-11", "Money", "Price cartons, labels and a cooler", "Labels need your name, address and quantity. Eggs stay at 45°F or below.", 0],
+["2026-12-12", "Network", "Market visit: scout food vendors", "List vendors who could use quail eggs: breakfast stands, ramen and rice bowls, bakers.", 0],
+["2026-12-13", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
+["2026-12-14", "School", "Line up textbooks", "Check the bookstore list for your spring classes. Rent, buy used, or check the library.", 0],
+["2026-12-15", "Garden", "Thin, weed and record germination", "Germination rate and early vigor per variety. This is your crop trial data.", 0],
+["2026-12-16", "Learn", "Read the FSA business plan forms", "Look over what FSA-2037 and FSA-2038 ask for, then add any missing details to your log.", 0],
+["2026-12-17", "School", "Confirm your aid and class logistics", "Check your Promise Grant and any aid in eServices. Note room locations, Canvas access, and your parking or transit pass.", 0],
+["2026-12-18", "Money", "Calculate feed cost per bird", "Update the ledger.", 0],
+["2026-12-19", "Records", "Start a daily egg tally", "Once laying starts, count every day. Weekly totals become your supply numbers for vendors.", 0],
 ["2026-12-20", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2026-12-21", "School", "Line up textbooks", "Check the bookstore list for your spring classes. Rent, buy used, or check the library.", 0],
-["2026-12-22", "Garden", "Thin, weed and record germination", "Germination rate and early vigor per variety. This is your crop trial data.", 0],
-["2026-12-23", "Learn", "Read the FSA business plan forms", "Look over what FSA-2037 and FSA-2038 ask for, then add any missing details to your log.", 0],
+["2026-12-21", "Mentor", "Follow up on both mentorship requests", "Short polite email if you haven't heard back.", 0],
+["2026-12-22", "Network", "Write a one-page producer sheet", "Who you are, what eggs, realistic weekly volume, wholesale price, how you keep eggs cold.", 0],
+["2026-12-23", "Learn", "Egg handling and food safety rules", "Washing, refrigeration, carton labeling, sell-by timing.", 0],
 ["2026-12-24", "Rest", "Christmas Eve: care and log only", "", 0],
 ["2026-12-25", "Rest", "Christmas: care and log only", "", 0],
-["2026-12-26", "Records", "Start a daily egg tally", "Once laying starts, count every day. Weekly totals become your supply numbers for vendors.", 0],
+["2026-12-26", "Network", "Pitch your first vendor", "Offer a free or at-cost trial batch. Bring your producer sheet.", 1],
 ["2026-12-27", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2026-12-28", "Mentor", "Follow up on both mentorship requests", "Short polite email if you haven't heard back.", 0],
-["2026-12-29", "Network", "Write a one-page producer sheet", "Who you are, what eggs, realistic weekly volume, wholesale price, how you keep eggs cold.", 0],
-["2026-12-30", "Learn", "Egg handling and food safety rules", "Washing, refrigeration, carton labeling, sell-by timing.", 0],
+["2026-12-28", "School", "Draft your semester week", "Classes, chores, study blocks and log time on one page. Same chore and log times every day.", 0],
+["2026-12-29", "Birds", "Health check and deep clean", "Inspect each bird, clean the coop, log anything unusual.", 0],
+["2026-12-30", "Learn", "Winter lighting for layers", "Laying drops with short days. Decide on supplemental light and log why.", 0],
 ["2026-12-31", "Review", "December wrap-up and 2027 goals", "Total December hours, costs and eggs, and write one paragraph for your FSA file. Then write three goals for 2027 tied to your FSA timeline.", 1],
 ["2027-01-01", "Rest", "New Year's Day: care and log only", "", 0],
-["2027-01-02", "Network", "Pitch your first vendor", "Offer a free or at-cost trial batch. Bring your producer sheet.", 1],
+["2027-01-02", "Network", "First egg-for-produce trade", "Record the estimated dollar value of both sides of the trade.", 0],
 ["2027-01-03", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
 ["2027-01-04", "Money", "Close the 2026 ledger", "Total costs, sales and trade values for 2026.", 1],
-["2027-01-05", "Birds", "Health check and deep clean", "Inspect each bird, clean the coop, log anything unusual.", 0],
-["2027-01-06", "Learn", "Winter lighting for layers", "Laying drops with short days. Decide on supplemental light and log why.", 0],
-["2027-01-07", "School", "Confirm your aid and class logistics", "Check your Promise Grant and any aid in eServices. Note room locations, Canvas access, and your parking or transit pass.", 0],
-["2027-01-08", "Money", "Calculate feed cost per bird", "Update the ledger.", 0],
-["2027-01-09", "Network", "First egg-for-produce trade", "Record the estimated dollar value of both sides of the trade.", 0],
-["2027-01-10", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2027-01-11", "School", "Draft your semester week", "Classes, chores, study blocks and log time on one page. Same chore and log times every day.", 0],
-["2027-01-12", "School", "Get books and supplies, and walk the campus", "Pick up what's left, then find the ag department and farm lab at CRC.", 0],
-["2027-01-13", "Records", "Write a busy-day chore list", "The minimum version of farm care for exam weeks.", 0],
-["2027-01-14", "Network", "Check in with your vendor and trade partners", "Confirm what you can supply around class days.", 0],
-["2027-01-15", "Money", "Ask about filing Schedule F", "Ask a tax preparer or free VITA site whether your 2026 activity belongs on a Schedule F. A farm tax history helps your loan file.", 0],
-["2027-01-16", "Birds", "Deep clean before the semester", "", 0],
-["2027-01-17", "Review", "Final pre-semester review", "What's done, what carries over, and what has to move to fit around classes.", 1],
-["2027-01-18", "FSA", "Start the business plan draft", "Operation description, goals, and your experience history so far.", 1],
+["2027-01-05", "School", "Get books and supplies, and walk the campus", "Pick up what's left, then find the ag department and farm lab at CRC.", 0],
+["2027-01-06", "Records", "Write a busy-day chore list", "The minimum version of farm care for exam weeks.", 0],
+["2027-01-07", "Network", "Check in with your vendor and trade partners", "Confirm what you can supply around class days.", 0],
+["2027-01-08", "Money", "Ask about filing Schedule F", "Ask a tax preparer or free VITA site whether your 2026 activity belongs on a Schedule F. A farm tax history helps your loan file.", 0],
+["2027-01-09", "Birds", "Deep clean before the semester", "", 0],
+["2027-01-10", "Review", "Final pre-semester review", "What's done, what carries over, and what has to move to fit around classes.", 1],
+["2027-01-11", "FSA", "Start the business plan draft", "Operation description, goals, and your experience history so far.", 1],
+["2027-01-12", "Birds", "Plan flock replacement", "Quail lay well for about 1 to 1.5 years. Decide when and how you'll replace them.", 0],
+["2027-01-13", "Learn", "Humboldt land and market research", "One hour: land listings, NCGA market rules and application windows for the Arcata market, county ag resources.", 0],
+["2027-01-14", "Mentor", "First mentor meeting", "Bring a written list of questions.", 1],
+["2027-01-15", "Money", "Check CTB and WIOA status", "Send anything missing.", 0],
+["2027-01-16", "Garden", "Harvest and weigh fast crops", "Yield per bed for radishes and greens.", 0],
+["2027-01-17", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
+["2027-01-18", "Records", "Build your experience file", "One folder: log, receipts, permits, CDFA registration, mentor emails, enrollment proof.", 1],
 ["2027-01-19", "Learn", "First week of classes: read your syllabi", "Note due dates and exams, and mark heavy weeks on your calendar so farm work can go light those days.", 0],
-["2027-01-20", "Learn", "Humboldt land and market research", "One hour: land listings, NCGA market rules and application windows for the Arcata market, county ag resources.", 0],
-["2027-01-21", "Mentor", "First mentor meeting", "Bring a written list of questions.", 1],
-["2027-01-22", "Money", "Check CTB and WIOA status", "Send anything missing.", 0],
-["2027-01-23", "Garden", "Harvest and weigh fast crops", "Yield per bed for radishes and greens.", 0],
+["2027-01-20", "Learn", "Course reading", "Keep up with your ag course reading.", 0],
+["2027-01-21", "Network", "Put the vendor deal in writing", "Weekly quantity, price, handoff time, and what happens on a short week.", 0],
+["2027-01-22", "Money", "January money check", "Total January costs, sales and trades. Compare feed cost per dozen with what you charge.", 0],
+["2027-01-23", "Garden", "Plan the spring trial beds", "Based on fall results, choose what to test next and why.", 0],
 ["2027-01-24", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2027-01-25", "Records", "Build your experience file", "One folder: log, receipts, permits, CDFA registration, mentor emails, enrollment proof.", 1],
-["2027-01-26", "Birds", "Plan flock replacement", "Quail lay well for about 1 to 1.5 years. Decide when and how you'll replace them.", 0],
-["2027-01-27", "Learn", "Course reading", "Keep up with your ag course reading.", 0],
-["2027-01-28", "Network", "Put the vendor deal in writing", "Weekly quantity, price, handoff time, and what happens on a short week.", 0],
-["2027-01-29", "Money", "January money check", "Total January costs, sales and trades. Compare feed cost per dozen with what you charge.", 0],
-["2027-01-30", "Garden", "Plan the spring trial beds", "Based on fall results, choose what to test next and why.", 0],
+["2027-01-25", "FSA", "Send the FSA office a progress update", "Short email: log start date, enrollment, mentorship, CDFA registration, flock and sales so far.", 1],
+["2027-01-26", "Birds", "Winter coop check", "Rain, drafts, wet bedding.", 0],
+["2027-01-27", "Learn", "Light reading", "One chapter of an ag business book or course reading.", 0],
+["2027-01-28", "Mentor", "Set a monthly mentor rhythm", "Share your class schedule and pick a standing meeting time.", 0],
+["2027-01-29", "Money", "Get the 2026 farm numbers to your tax preparer", "If Schedule F applies, hand over the closed 2026 ledger and receipts.", 0],
+["2027-01-30", "Records", "Tidy the records", "", 0],
 ["2027-01-31", "Review", "January month-end review", "Hours, costs, eggs, trades. One paragraph for the FSA file.", 1],
-["2027-02-01", "FSA", "Send the FSA office a progress update", "Short email: log start date, enrollment, mentorship, CDFA registration, flock and sales so far.", 1],
-["2027-02-02", "Birds", "Winter coop check", "Rain, drafts, wet bedding.", 0],
-["2027-02-03", "Learn", "Light reading", "One chapter of an ag business book or course reading.", 0],
-["2027-02-04", "Mentor", "Set a monthly mentor rhythm", "Share your class schedule and pick a standing meeting time.", 0],
-["2027-02-05", "Money", "Get the 2026 farm numbers to your tax preparer", "If Schedule F applies, hand over the closed 2026 ledger and receipts.", 0],
-["2027-02-06", "Records", "Tidy the records", "", 0],
+["2027-02-01", "Records", "Update your experience file", "Add the January summary, mentor notes and any new permits or letters.", 0],
+["2027-02-02", "Garden", "Prep beds for spring planting", "Compost from the coop goes on the beds. Note how much you used.", 0],
+["2027-02-03", "Learn", "Reading", "", 0],
+["2027-02-04", "Network", "Thank your contacts", "A note or a dozen eggs to growers, vendors and mentors.", 0],
+["2027-02-05", "Money", "Check egg pricing against costs", "Compare what you charge with feed and packaging cost per dozen; adjust if needed and log why.", 0],
+["2027-02-06", "Network", "Market visit: vendor follow-ups", "", 0],
 ["2027-02-07", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2027-02-08", "Records", "Update your experience file", "Add the January summary, mentor notes and any new permits or letters.", 0],
-["2027-02-09", "Garden", "Prep beds for spring planting", "Compost from the coop goes on the beds. Note how much you used.", 0],
-["2027-02-10", "Learn", "Reading", "", 0],
-["2027-02-11", "Network", "Thank your contacts", "A note or a dozen eggs to growers, vendors and mentors.", 0],
-["2027-02-12", "Money", "Check egg pricing against costs", "Compare what you charge with feed and packaging cost per dozen; adjust if needed and log why.", 0],
-["2027-02-13", "Network", "Market visit: vendor follow-ups", "", 0],
+["2027-02-08", "FSA", "Revise the business plan draft", "Fold in your mentor's feedback and the January numbers.", 0],
+["2027-02-09", "Birds", "Health check and deep clean", "Inspect each bird, clean the coop, log anything unusual.", 0],
+["2027-02-10", "Learn", "Ag business reading", "", 0],
+["2027-02-11", "Network", "Check in with your vendor and trade partners", "", 0],
+["2027-02-12", "Money", "Update feed cost per bird", "", 0],
+["2027-02-13", "Network", "Workshop or volunteer day", "", 0],
 ["2027-02-14", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2027-02-15", "FSA", "Revise the business plan draft", "Fold in your mentor's feedback and the January numbers.", 0],
-["2027-02-16", "Birds", "Health check and deep clean", "Inspect each bird, clean the coop, log anything unusual.", 0],
-["2027-02-17", "Learn", "Ag business reading", "", 0],
-["2027-02-18", "Network", "Check in with your vendor and trade partners", "", 0],
-["2027-02-19", "Money", "Update feed cost per bird", "", 0],
-["2027-02-20", "Network", "Workshop or volunteer day", "", 0],
-["2027-02-21", "Review", "Weekly review", "Total your hours, list what got done, and pick next week's priorities. Ten lines in the log is plenty.", 0],
-["2027-02-22", "Records", "Back up the journal", "More → Export backup. Keep a copy somewhere besides your phone.", 0],
-["2027-02-23", "Garden", "Plant the spring trial beds", "Record variety, seed source, bed size and sowing date for each.", 0],
-["2027-02-24", "Learn", "Reading", "", 0],
-["2027-02-25", "Mentor", "Monthly mentor meeting", "", 0],
-["2027-02-26", "Review", "Plan review: what's done, what carries over", "", 1],
-["2027-02-27", "Rest", "Rest and flock care", "", 0],
-["2027-02-28", "Review", "February wrap-up and next plan", "Total February and write one paragraph for your FSA file. Ask Claude to build the next plan around your class schedule.", 1]
+["2027-02-15", "Records", "Back up the journal", "More → Export backup. Keep a copy somewhere besides your phone.", 0],
+["2027-02-16", "Garden", "Plant the spring trial beds", "Record variety, seed source, bed size and sowing date for each.", 0],
+["2027-02-17", "Learn", "Reading", "", 0],
+["2027-02-18", "Mentor", "Monthly mentor meeting", "", 0],
+["2027-02-19", "Review", "Plan review: what's done, what carries over", "", 1],
+["2027-02-20", "Rest", "Rest and flock care", "", 0],
+["2027-02-21", "Review", "Plan wrap-up and next plan", "Total February so far and write one paragraph for your FSA file. Ask Claude to build the next plan around your class schedule.", 1]
 ];
 const PLANMAP = Object.fromEntries(PLAN.map(([d,tag,title,detail,key])=>[d,{tag,title,detail,key:!!key}]));
-const PLAN_START="2026-11-16", PLAN_END=PLAN[PLAN.length-1][0];
+const PLAN_START="2026-11-09", PLAN_END=PLAN[PLAN.length-1][0], PLAN_DAYS=PLAN.filter(r=>r[0]>=PLAN_START).length;
 let CLASS_START="2027-01-19"; // first week of spring classes; set in Settings → FSA plan & dates
 const PHASES = [
-  {name:"Phase 1 · Restart and foundations", from:"2026-11-16", to:"2026-12-13", blurb:"Catch up the school paperwork, get the legal answer on birds, line up mentors and funding, and finish the coop."},
-  {name:"Phase 2 · Production starts", from:"2026-12-14", to:"2027-01-10", blurb:"Birds in, CDFA registration filed, eggs counted, a first vendor pitch and trade, and the 2026 books closed."},
-  {name:"Phase 3 · Into the semester", from:"2027-01-11", to:"2027-02-07", blurb:"Set a farm routine that fits around classes, start the business plan, meet your mentor, and build the experience file."},
-  {name:"Phase 4 · Steady rhythm", from:"2027-02-08", to:"2027-02-28", blurb:"Keep the record growing on a class schedule: monthly summaries, vendor check-ins, the business plan and spring beds."}
+  {name:"Warm-up week", from:"2026-11-04", to:"2026-11-08", blurb:"Light tasks to get set up: the app, your paperwork, receipts, before photos and a look at week 1."},
+  {name:"Phase 1 · Restart and foundations", from:"2026-11-09", to:"2026-12-06", blurb:"Catch up the school paperwork, get the legal answer on birds, line up mentors and funding, and finish the coop."},
+  {name:"Phase 2 · Production starts", from:"2026-12-07", to:"2027-01-03", blurb:"Birds in, CDFA registration filed, eggs counted, a first vendor pitch and trade, and the year wrapped up."},
+  {name:"Phase 3 · Into the semester", from:"2027-01-04", to:"2027-01-31", blurb:"Close the 2026 books, set a farm routine that fits around classes, start the business plan, meet your mentor, and build the experience file."},
+  {name:"Phase 4 · Steady rhythm", from:"2027-02-01", to:"2027-02-21", blurb:"Keep the record growing on a class schedule: the FSA update, vendor check-ins, the business plan and spring beds."}
 ];
 const RHYTHM=[["Sun","Weekly review, 30 min"],["Mon","Calls, applications, paperwork"],["Tue","Build and grow"],["Wed","Learning deep-dive"],["Thu","People: mentors, vendors, FSA"],["Fri","Money and records"],["Sat","In the field: markets, workshops, build days"]];
 const phaseOf = d => PHASES.find(p=>d>=p.from&&d<=p.to);
 const DEFAULT_ITEMS = [
-  {id:"feed",   label:"Birds fed & watered",      from:"2026-12-15", to:null},
-  {id:"eggs",   label:"Eggs collected & counted", from:"2026-12-15", to:null},
-  {id:"health", label:"Flock health check",       from:"2026-12-15", to:null},
-  {id:"garden", label:"Garden beds checked",      from:"2026-11-16", to:null},
-  {id:"learn",  label:"20 minutes of learning",   from:"2026-11-16", to:null},
-  {id:"coop",   label:"Clean the coop & change bedding", freq:"weekly", dow:6, from:"2026-12-15", to:null}
+  {id:"feed",   label:"Birds fed & watered",      from:"2026-12-08", to:null},
+  {id:"eggs",   label:"Eggs collected & counted", from:"2026-12-08", to:null},
+  {id:"health", label:"Flock health check",       from:"2026-12-08", to:null},
+  {id:"garden", label:"Garden beds checked",      from:"2026-11-09", to:null},
+  {id:"learn",  label:"20 minutes of learning",   from:"2026-11-09", to:null},
+  {id:"coop",   label:"Clean the coop & change bedding", freq:"weekly", dow:6, from:"2026-12-08", to:null}
 ];
 const DEFAULT_INV = [
   {id:"feed",    name:"Feed",        unit:"lb",      low:10, cat:"Feed"},
@@ -1638,19 +1644,19 @@ function planStats(){
 }
 function renderPlanHead(){
   const ph=phaseOf(today)||(today<PLAN_START?PHASES[0]:PHASES[PHASES.length-1]), st=planStats();
-  const dayN=Math.min(PLAN.length,Math.max(0,daysBetween(PLAN_START,today)+1)), toClass=daysBetween(today,CLASS_START);
+  const dayN=Math.min(PLAN_DAYS,Math.max(0,daysBetween(PLAN_START,today)+1)), toClass=daysBetween(today,CLASS_START);
   const before=today<PLAN_START;
-  $("planHead").innerHTML=`<span class="ey">FSA Groundwork Plan · ${before?"starts Mon, Nov 16":"Day "+dayN+" of "+PLAN.length}</span><h2></h2><p></p>
+  $("planHead").innerHTML=`<span class="ey">FSA Groundwork Plan · ${before?"day one is Mon, Nov 9":"Day "+dayN+" of "+PLAN_DAYS}</span><h2></h2><p></p>
     <div class="pbar" aria-hidden="true"><i style="width:${Math.round(st.tasks/PLAN.length*100)}%"></i></div>
     <div class="pstats"><span>Tasks <b>${st.tasks}/${PLAN.length}</b></span><span>Key milestones <b>${st.keyDone}/${st.keyTot}</b></span><span>Streak <b>${st.streak} day${st.streak===1?"":"s"}</b></span>${toClass>0?`<span>Classes in <b>${toClass} days</b></span>`:""}</div>`;
   $("planHead").querySelector("h2").textContent=ph.name;
-  $("planHead").querySelector("p").textContent=ph.blurb+(before?" Until then, keep logging; the plan's day one is Monday, Nov 16.":"");
+  $("planHead").querySelector("p").textContent=ph.blurb+(before&&ph!==PHASES[0]?" The plan proper starts Monday, Nov 9.":"");
 }
 function renderCarton(){
   const g=$("carton"); g.innerHTML="";
   ["","M","T","W","T","F","S","S"].forEach(h=>{ const x=document.createElement("span"); x.className="dw"; x.textContent=h; g.appendChild(x); });
-  let wk=1;
-  for(let w=weekStart(PLAN_START); w<=PLAN_END; w=addDays(w,7), wk++){
+  let wk=PLAN[0][0]<PLAN_START?0:1;
+  for(let w=weekStart(PLAN[0][0]); w<=PLAN_END; w=addDays(w,7), wk++){
     const lab=document.createElement("span"); lab.className="wl"; lab.textContent="Wk "+wk; g.appendChild(lab);
     for(let i=0;i<7;i++){ const d=addDays(w,i), p=PLANMAP[d], b=document.createElement("button"); b.type="button";
       if(!p){ b.className="cup blank"; b.tabIndex=-1; b.setAttribute("aria-hidden","true"); g.appendChild(b); continue; }
@@ -1981,10 +1987,10 @@ async function updateUsage(){
 }
 function setSync(ok,txt,about){ $("sync").className="sync"+(ok?" ok":""); $("syncTxt").textContent=txt; $("aboutSave").textContent=about; }
 
-// Plan restart (Nov 16): move checklist start dates that still carry the old schedule.
+// Plan restart (Nov 9): move checklist start dates that still carry an older schedule.
 function shiftItems(list){ let ch=false;
-  list.forEach(it=>{ if(["feed","eggs","health","coop"].includes(it.id) && (it.from==="2026-11-03"||it.from==="2026-10-07")){ it.from="2026-12-15"; ch=true; }
-    else if(["garden","learn"].includes(it.id) && it.from==="2026-10-07"){ it.from="2026-11-16"; ch=true; } });
+  list.forEach(it=>{ if(["feed","eggs","health","coop"].includes(it.id) && ["2026-11-03","2026-10-07","2026-12-15"].includes(it.from)){ it.from="2026-12-08"; ch=true; }
+    else if(["garden","learn"].includes(it.id) && ["2026-10-07","2026-11-16"].includes(it.from)){ it.from="2026-11-09"; ch=true; } });
   return ch; }
 // One-time: bring notes and the learning habit over from the old standalone FSA Groundwork Plan page (phone app only).
 function importOldPlan(){
@@ -2055,7 +2061,7 @@ function applyRow(row){
     if((mine.updatedAt||"")>(v.updatedAt||"")) mark("day:"+row.id);
     return false;
   }
-  if(row.col==="settings"&&row.id==="checklist"&&Array.isArray(v.items)&&v.items.length&&!outbox.has("items")){ items=v.items.map(x=>({...x})); shiftItems(items); return true; }
+  if(row.col==="settings"&&row.id==="checklist"&&Array.isArray(v.items)&&v.items.length&&!outbox.has("items")){ items=v.items.map(x=>({...x})); if(shiftItems(items)&&!RO&&session) setTimeout(()=>mark("items"),0); return true; }
   if(row.col==="settings"&&row.id==="inventory"&&Array.isArray(v.items)&&v.items.length&&!outbox.has("inv")){ inv=v.items.map(x=>({...x})); return true; }
   if(row.col==="settings"&&row.id==="prefs"&&!outbox.has("prefs")){ prefs={...prefs,...v}; applyPrefs(); return true; }
   return false;
@@ -2215,7 +2221,7 @@ async function loadMe(){
 const SECS=[
   {k:"checklist",g:"Farm",t:"Checklist",ic:"M9 11l3 3 8-8M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9",sum:()=>items.filter(i=>!i.to||i.to>=today).length+" tasks"},
   {k:"supplies",g:"Farm",t:"Supplies",ic:"M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10",sum:()=>{ const low=inv.filter(i=>!i.off&&invState(i).low).length; return low?low+" running low":inv.filter(i=>!i.off).length+" items"; }},
-  {k:"plan",g:"Farm",t:"FSA plan & dates",ic:"M4 6h16v14H4zM4 10h16M9 3v5M15 3v5",sum:()=>today<PLAN_START?"Starts Nov 16":today>PLAN_END?"Finished":"Day "+(daysBetween(PLAN_START,today)+1)+" of "+PLAN.length},
+  {k:"plan",g:"Farm",t:"FSA plan & dates",ic:"M4 6h16v14H4zM4 10h16M9 3v5M15 3v5",sum:()=>today<PLAN_START?"Warm-up week":today>PLAN_END?"Finished":"Day "+(daysBetween(PLAN_START,today)+1)+" of "+PLAN_DAYS},
   {k:"display",g:"This phone",t:"Display",ic:"M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M16.5 16.5 18 18M6 18l1.5-1.5M16.5 7.5 18 6M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8",sum:()=>({system:"Auto",light:"Light",dark:"Dark"})[themePref()]+" theme"},
   {k:"data",g:"This phone",t:"Data & backup",ic:"M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5",sum:()=>outbox.size?outbox.size+" waiting":(syncErr?"Offline":"All saved")},
   {k:"accounts",g:"Account",t:"Accounts & access",admin:true,ic:"M16 11a3 3 0 1 0 0-6a3 3 0 1 0 0 6M8 11a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2 20c.8-3 3-4.5 6-4.5s5.2 1.5 6 4.5M14 15.6c.6-.1 1.3-.1 2-.1 3 0 5.2 1.5 6 4.5",sum:()=>accounts?accounts.length+" account"+(accounts.length===1?"":"s"):""},
@@ -2255,8 +2261,8 @@ function renderSettings(){
 }
 document.addEventListener("click",ev=>{ const b=ev.target.closest("[data-set]"); if(b) openSet(b.dataset.set); });
 function renderPlanSec(){
-  $("planSec").innerHTML=`<h3>FSA Groundwork Plan</h3><p class="small">${PLAN.length} days of plan tasks, Mon, Nov 16 to Sun, Feb 28. Each day's task shows on Today; the Plan tab has the carton, phases and every task.</p>`+
-    srow("Plan start","The restart day. The plan's dates are built around it.",`<span class="small" style="font-weight:600;color:var(--ink)">Mon, Nov 16, 2026</span>`)+
+  $("planSec").innerHTML=`<h3>FSA Groundwork Plan</h3><p class="small">A warm-up week (Nov 4 to 8), then ${PLAN_DAYS} days of plan tasks, Mon, Nov 9 to Sun, Feb 21. Each day's task shows on Today; the Plan tab has the carton, phases and every task.</p>`+
+    srow("Plan start","The restart day. The plan's dates are built around it.",`<span class="small" style="font-weight:600;color:var(--ink)">Mon, Nov 9, 2026</span>`)+
     srow("First day of spring classes","Used for the countdown on the Plan tab. Confirm it in eServices.",`<input class="field" type="date" id="pClass" value="${esc(CLASS_START)}" style="max-width:180px"${RO?" disabled":""}>`)+
     srow("FSA experience summary","A one-page report of your record for your loan officer.",`<button class="btn" type="button" id="pFsa">Export summary</button>`)+
     srow("Open the plan","",`<button class="btn" type="button" id="pOpen">Plan tab</button>`);
