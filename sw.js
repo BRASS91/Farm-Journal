@@ -1,7 +1,7 @@
 // Farm R&A: offline support. The app shell is cached so it opens without a connection.
 // Records and receipt photos are never cached here; the app keeps its own copy on the phone.
 // Other apps on ransdell91.github.io share this cache storage, so only farm-ra-* caches are ever cleared.
-const VERSION = 'farm-ra-1.0';
+const VERSION = 'farm-ra-1.01';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './vendor/supabase-2.45.4.js', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png'];
 
 self.addEventListener('install', (event) => {

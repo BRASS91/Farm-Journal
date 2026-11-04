@@ -2,7 +2,7 @@
   "name": "Farm R&A",
   "short_name": "Farm R&A",
   "description": "Humboldt Farms: the farm journal and FSA Groundwork Plan in one app.",
-  "id": "./",
+  "id": "./farm-ra",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
