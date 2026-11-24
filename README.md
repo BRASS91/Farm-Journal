@@ -1,11 +1,43 @@
-# Farm R&A (Farm Journal)
+# Farm R&A
 
-Humboldt Farms' farm journal and FSA Groundwork Plan. It ran inside the R&A production app (`BRASS91/RA-Media-App`, folder `farm/`) from Nov 4 to Nov 24, 2026. It has been taken back out so the R&A hub stays production-only, and it is being set up as its own app here again.
+Humboldt Farms' farm journal and FSA Groundwork Plan in one installable app.
 
-## Where everything is now
-- **Address:** https://brass91.github.io/Farm-Journal/. For now it shows a "getting its own app" page. `journal.html` and `plan.html` show the same page.
-- **Latest code:** `_from-ra-hub/` is the farm app exactly as it was inside the R&A hub (version "RA · Farm 1.1"). It isn't served (GitHub Pages skips folders that start with `_`). It still expects the hub's sign-in (`RA_HOME="../"`) and the hub's `records` table, so it needs its own sign-in and data connection before it can go live here.
-- **The earlier standalone version** (its own sign-in and Supabase project) is in this repo's history at commit `1006a5d`, before the move into the hub.
-- **Data:** the live journal data (6 records: 3 days, plus the checklist, supplies and settings) is still in the R&A HUB Supabase project (`fbskjgluladhqocklyre`), in `public.records` with `app = 'farm'`, along with the empty private bucket `farm-receipts`. It stays there untouched until this app has its own home, then it moves and is removed from the hub.
-- **Old Supabase project:** "FARM R&A" (`vxlgvfkrfjjjtfhtwsny`, us-west-1) is paused. It holds the farm data from before Nov 4 and could be restored to be this app's home again.
-- `sw.js` only clears this address's old offline copies.
+- **App:** https://brass91.github.io/Farm-Journal/
+- **Data:** Supabase project `vxlgvfkrfjjjtfhtwsny` (FARM R&A) in the R&A Media Productions LLC organization
+  - `public.records`: one row per day (`col = 'days'`, `id = 'YYYY-MM-DD'`) plus settings (`checklist`, `inventory`, `prefs`)
+  - `public.accounts`: who can sign in and their access level
+  - Storage bucket `receipts` (private): receipt photos, named `<photo id>.jpg`
+- **Sign-in:** email and password, or an emailed code. Only addresses in `public.accounts` get in.
+
+## History
+- Oct 31 – Nov 4, 2026: standalone app on its own Supabase project (FARM R&A).
+- Nov 4 – Nov 24, 2026: ran inside the R&A production app (`BRASS91/RA-Media-App`, folder `farm/`) on the R&A HUB Supabase project.
+- Nov 24, 2026: taken back out so the R&A hub stays production-only. Standalone again on FARM R&A (version 1.2). The journal records written while it was in the hub were copied back into FARM R&A.
+- Phones that used it in the hub keep their local copy (same address, same storage keys), so anything not yet synced uploads here after signing in again.
+
+## Access levels
+| Level | Can see | Can change | Manages accounts |
+|---|---|---|---|
+| Admin | Everything | Everything | Yes |
+| Helper | Everything | Days, checklist, supplies, settings | No |
+| Viewer | Everything | Nothing (for a mentor or loan officer) | No |
+
+Admins manage accounts in **Settings → Accounts & access**. Row-level security in the database enforces the levels.
+
+## How it works
+- The phone keeps a full copy (localStorage, plus IndexedDB for photos), so the app works offline.
+- Every change goes into an outbox and is sent to Supabase in order, retrying until it lands. Other phones get it live.
+- On first sign-in, records from the earlier phone-only Farm Journal app on the same phone are uploaded automatically, photos included.
+
+## Screens
+Today (plan task, checklist, to-dos, flock, eggs, hours, money, receipts, notes) · Calendar · Plan (FSA Groundwork Plan: phases, the carton, weekly rhythm, every task, monthly numbers, FSA summary) · Notes · Settings (checklist, supplies, plan dates, display, data & backup, accounts, account, updates).
+
+## Files
+- `index.html`: the whole app
+- `sw.js`: offline support (bump `VERSION` when cached files change)
+- `manifest.webmanifest`, `icons/`: install on Android
+- `vendor/`: the Supabase client library, bundled so the app works offline
+- `supabase/setup.sql`: the database setup
+
+## Updating
+Edit and push to `main`. GitHub Pages republishes in about a minute; phones pick up the new version the next time the app opens with a connection.
