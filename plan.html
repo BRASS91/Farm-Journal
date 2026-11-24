@@ -1,8 +1,8 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Farm R&amp;A moved</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Farm R&amp;A</title>
 <script>
-// Farm R&A now lives inside the R&A app. Records saved on this phone carry over (same site).
-(function(){var h=location.hash||"#progress";
-if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(r.scope.indexOf("/Farm-Journal/")>=0)r.unregister();});}).catch(function(){});}
-location.replace("https://brass91.github.io/RA-Media-App/farm/"+h);})();
-</script></head>
-<body style="font-family:system-ui;padding:24px;line-height:1.5"><h1 style="font-size:22px">Farm R&amp;A is now in the R&amp;A app</h1><p><a href="https://brass91.github.io/RA-Media-App/farm/">Open Farm R&amp;A</a>. Install the R&amp;A app from your browser menu to keep it on your home screen.</p></body></html>
+// Farm R&A is being set up as its own app again. Clear the old offline copy so this page shows.
+(function(){if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(r.scope.indexOf("/Farm-Journal/")>=0)r.unregister();});}).catch(function(){});}})();
+</script>
+<style>body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#F4F8F5;color:#1F2B24;line-height:1.5}main{max-width:520px;margin:0 auto;padding:48px 24px}h1{font-size:26px;margin:0 0 8px}p{margin:0 0 12px;color:#45544B}
+@media (prefers-color-scheme:dark){body{background:#142019;color:#E6EFE9}p{color:#A9BCB0}}</style></head>
+<body><main><h1>Farm R&amp;A is getting its own app</h1><p>Farm R&amp;A is moving out of the R&amp;A production app and back into an app of its own. This page will become that app.</p><p>Your journal days, checklist, supplies and settings are saved and will come with it.</p></main></body></html>
